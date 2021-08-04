@@ -533,7 +533,7 @@ class BO_express(BO):
     def __init__(self,
                  reaction_components={}, encoding={}, descriptor_matrices={},
                  model=GP_Model, acquisition_function='EI', init_method='rand', 
-                 target=-1, batch_size=5, computational_objective=None):
+                 gpu=False, target=-1, batch_size=5, computational_objective=None):
         """        
         Parameters
         ----------
@@ -696,7 +696,8 @@ class BO_express(BO):
                                          lengthscale_prior=lengthscale_prior,
                                          outputscale_prior=outputscale_prior,
                                          noise_prior=noise_prior,
-                                         fast_comp=True)
+                                         fast_comp=True,
+                                         gpu=gpu)
         
         
     def get_experiments(self, structures=False):
